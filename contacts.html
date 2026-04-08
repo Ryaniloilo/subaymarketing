@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Subay Marketing</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #F5F1E8;
+      color: #1E2A28;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      width: 100%;
+      background: rgba(245, 241, 232, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .navbar {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #1F6F50;
+    }
+
+    .logo span {
+      color: #2FAF90;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+      color: #1E2A28;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #1F6F50;
+    }
+
+    .nav-btn {
+      background: #F4B942;
+      color: #1E2A28;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: 45vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(15, 38, 31, 0.68), rgba(15, 38, 31, 0.68)),
+        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    section {
+      padding: 90px 10%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+      color: #1F6F50;
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 55px;
+      color: #4f5f5b;
+      font-size: 1.05rem;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .contact-card,
+    .form-card {
+      background: white;
+      border-radius: 24px;
+      padding: 32px 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .contact-card h3,
+    .form-card h3 {
+      color: #1F6F50;
+      margin-bottom: 18px;
+      font-size: 1.5rem;
+    }
+
+    .contact-item {
+      margin-bottom: 18px;
+      padding: 16px 18px;
+      background: #f7f7f7;
+      border-radius: 16px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #1F6F50;
+      margin-bottom: 6px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d7ddd9;
+      border-radius: 14px;
+      font-size: 1rem;
+      outline: none;
+      background: #fcfcfc;
+    }
+
+    textarea {
+      resize: none;
+      min-height: 140px;
+    }
+
+    button {
+      background: #1F6F50;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #16523b;
+    }
+
+    .cta-note {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #5a6965;
+    }
+
+    footer {
+      background: #1E2A28;
+      color: #d6e1dc;
+      padding: 60px 10% 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    footer h4 {
+      color: #F4B942;
+      margin-bottom: 16px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      text-align: center;
+      color: #a9b9b2;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      nav ul {
+        display: none;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">Subay<span>Marketing</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="impact.html">Impact</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html" class="nav-btn">Request a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Contact Subay Marketing</h1>
+      <p>
+        Let’s work together for sustainable waste solutions, recycled products, and environmental partnerships.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtitle">
+      Reach out for product inquiries, waste collection requests, partnerships, or general concerns.
+    </p>
+
+    <div class="contact-wrapper">
+      <div class="contact-card">
+        <h3>Contact Information</h3>
+
+        <div class="contact-item">
+          <strong>Email</strong>
+          info@subaymarketing.com
+        </div>
+
+        <div class="contact-item">
+          <strong>Phone</strong>
+          +63 900 000 0000
+        </div>
+
+        <div class="contact-item">
+          <strong>Office Location</strong>
+          Main Office / Recycling Hub Address Here
+        </div>
+
+        <div class="contact-item">
+          <strong>Business Hours</strong>
+          Monday – Saturday | 8:00 AM – 5:00 PM
+        </div>
+
+        <p class="cta-note">
+          You may also contact us through our official social media pages for updates and inquiries.
+        </p>
+      </div>
+
+      <div class="form-card">
+        <h3>Send Us a Message</h3>
+        <form>
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="text" placeholder="Phone Number">
+          
+          <select required>
+            <option value="">Select Inquiry Type</option>
+            <option>Product Inquiry</option>
+            <option>Waste Collection Request</option>
+            <option>Partnership</option>
+            <option>General Concern</option>
+          </select>
+
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Subay Marketing</h4>
+        <p>Transforming recyclable waste into sustainable opportunities.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: info@subaymarketing.com</li>
+          <li>Phone: +63 900 000 0000</li>
+          <li>Facebook / Instagram / LinkedIn</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Inquiry Types</h4>
+        <ul>
+          <li>Product Inquiry</li>
+          <li>Waste Collection</li>
+          <li>Partnership</li>
+          <li>General Concern</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Subay Marketing. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

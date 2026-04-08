@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Subay Marketing</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #F5F1E8;
+      color: #1E2A28;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      width: 100%;
+      background: rgba(245, 241, 232, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .navbar {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #1F6F50;
+    }
+
+    .logo span {
+      color: #2FAF90;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+      color: #1E2A28;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #1F6F50;
+    }
+
+    .nav-btn {
+      background: #F4B942;
+      color: #1E2A28;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.3s;
+      box-shadow: 0 8px 18px rgba(244, 185, 66, 0.25);
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      background: #e3a92e;
+    }
+
+    .page-hero {
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(15, 38, 31, 0.68), rgba(15, 38, 31, 0.68)),
+        url('https://images.unsplash.com/photo-1497436072909-f5e4be7fbb70?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .page-hero p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #f1f1f1;
+    }
+
+    section {
+      padding: 90px 10%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+      color: #1F6F50;
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 55px;
+      color: #4f5f5b;
+      font-size: 1.05rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      color: #1F6F50;
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+      color: #334540;
+      font-size: 1.02rem;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    }
+
+    .highlight-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .box {
+      background: white;
+      padding: 28px 24px;
+      border-radius: 22px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+      border-top: 5px solid #2FAF90;
+      transition: 0.3s;
+    }
+
+    .box:hover {
+      transform: translateY(-6px);
+    }
+
+    .box h4 {
+      color: #1F6F50;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .values {
+      background: #DDEFE8;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .value-card {
+      background: white;
+      padding: 30px 24px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+      transition: 0.3s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .value-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .value-card h3 {
+      color: #1F6F50;
+      margin-bottom: 12px;
+    }
+
+    .certifications {
+      background: #fdfcf9;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 35px;
+    }
+
+    .cert-card {
+      background: white;
+      border: 1px dashed #b8d6ca;
+      padding: 30px 22px;
+      border-radius: 20px;
+      text-align: center;
+      font-weight: 700;
+      color: #45635a;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #2FAF90, #1F6F50);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.3rem;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #F4B942;
+      color: #1E2A28;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(244, 185, 66, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #e3a92e;
+    }
+
+    footer {
+      background: #1E2A28;
+      color: #d6e1dc;
+      padding: 60px 10% 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    footer h4 {
+      color: #F4B942;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      text-align: center;
+      color: #a9b9b2;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero h1 {
+        font-size: 2.4rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .cta h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo">Subay<span>Marketing</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="impact.html">Impact</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" class="nav-btn">Request a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div>
+      <h1>About Subay Marketing</h1>
+      <p>
+        Transforming recyclable waste into practical, sustainable solutions while empowering communities
+        and protecting the environment.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPANY PROFILE -->
+  <section>
+    <h2 class="section-title">Who We Are</h2>
+    <p class="section-subtitle">
+      Subay Marketing is committed to reducing waste and creating eco-friendly products through responsible recycling and innovation.
+    </p>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Driven by Sustainability and Community Impact</h3>
+        <p>
+          Subay Marketing is a recycling and waste transformation company focused on collecting recyclable materials
+          and converting them into useful, durable, and sustainable products.
+        </p>
+        <p>
+          Our operations are designed to support environmental responsibility, reduce landfill waste, and provide
+          practical recycling solutions for institutions, businesses, local government units, and communities.
+        </p>
+        <p>
+          Through innovation, collaboration, and responsible waste management, we aim to create long-term value for
+          both people and the planet.
+        </p>
+      </div>
+
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80" alt="Recycling Facility">
+      </div>
+    </div>
+
+    <div class="highlight-boxes">
+      <div class="box">
+        <h4>Our Mission</h4>
+        <p>To transform recyclable waste into valuable products that contribute to cleaner communities and sustainable development.</p>
+      </div>
+
+      <div class="box">
+        <h4>Our Vision</h4>
+        <p>To become a trusted leader in waste recycling and environmental innovation for communities and industries.</p>
+      </div>
+
+      <div class="box">
+        <h4>Our Commitment</h4>
+        <p>To deliver practical eco-solutions that support businesses, schools, and local communities through responsible recycling.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE VALUES -->
+  <section class="values">
+    <h2 class="section-title">Our Core Values</h2>
+    <p class="section-subtitle">
+      These values guide our work, our partnerships, and our environmental mission.
+    </p>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="icon">🌱</div>
+        <h3>Sustainability</h3>
+        <p>We prioritize eco-friendly solutions that reduce waste and promote responsible resource use.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="icon">💡</div>
+        <h3>Innovation</h3>
+        <p>We continuously improve our recycling processes and product solutions to create better environmental outcomes.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="icon">🤝</div>
+        <h3>Community Development</h3>
+        <p>We believe recycling should also create opportunities, partnerships, and positive social impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="certifications">
+    <h2 class="section-title">Compliance & Certifications</h2>
+    <p class="section-subtitle">
+      We are committed to responsible operations, environmental compliance, and trusted industry practices.
+    </p>
+
+    <div class="cert-grid">
+      <div class="cert-card">Environmental Compliance</div>
+      <div class="cert-card">Waste Management Standards</div>
+      <div class="cert-card">Business Registration</div>
+      <div class="cert-card">Operational Permits</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Partner with a Purpose</h2>
+    <p>
+      Join us in building a cleaner and more sustainable future through responsible recycling and environmental innovation.
+    </p>
+    <a href="contact.html" class="btn-primary">Contact Us</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Subay Marketing</h4>
+        <p>
+          Transforming recyclable waste into useful, sustainable products for communities and industries.
+        </p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li>Waste Collection</li>
+          <li>Plastic Processing</li>
+          <li>Upcycled Products</li>
+          <li>Partnership Programs</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: info@subaymarketing.com</li>
+          <li>Phone: +63 900 000 0000</li>
+          <li>Facebook / Instagram / LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Subay Marketing. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
