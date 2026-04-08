@@ -42,15 +42,27 @@
       align-items: center;
     }
 
-    .logo {
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: #1F6F50;
-    }
+.logo {
+  display: flex;
+  align-items: center;  
+  gap: 1px;    
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #1F6F50;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
 
-    .logo span {
-      color: #2FAF90;
-    }
+.logo img {
+  height: 60px;     
+  width: auto;
+  display: block;
+}
+
+.logo span {
+  color: #2FAF90;
+      
+}
 
     nav ul {
       display: flex;
@@ -258,7 +270,8 @@
 
   <header>
     <div class="navbar">
-      <div class="logo">Subay<span>Marketing</span></div>
+      <div class="logo"> <img src="logo.png" alt="Subay Marketing Logo"> Subay<span>Marketing Inc.</span></div>
+
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>

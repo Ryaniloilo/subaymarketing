@@ -49,16 +49,27 @@
       align-items: center;
     }
 
-    .logo {
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: #1F6F50;
-      letter-spacing: 0.5px;
-    }
+.logo {
+  display: flex;
+  align-items: center;  
+  gap: 1px;    
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #1F6F50;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
 
-    .logo span {
-      color: #2FAF90;
-    }
+.logo img {
+  height: 60px;     
+  width: auto;
+  display: block;
+}
+
+.logo span {
+  color: #2FAF90;
+      
+}
 
     nav ul {
       display: flex;
@@ -99,7 +110,7 @@
       align-items: center;
       background:
         linear-gradient(rgba(15, 38, 31, 0.62), rgba(15, 38, 31, 0.62)),
-        url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
     }
 
@@ -506,7 +517,8 @@
   <!-- HEADER -->
   <header>
     <div class="navbar">
-      <div class="logo">Subay<span>Marketing</span></div>
+<div class="logo"> <img src="logo.png" alt="Subay Marketing Logo"> Subay<span>Marketing Inc.</span></div>
+
       <nav>
         <ul>
          <li><a href="index.html">Home</a></li>
